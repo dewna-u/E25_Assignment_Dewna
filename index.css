@@ -8,19 +8,24 @@ body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
   color: #333;
-  overflow-x: hidden;
+  overflow-x: auto;
+  background-color: #f9f9f9;
 }
 
-.container {
-  max-width: 1200px;
+/* Fixed layout container */
+.fixed-layout {
+  width: 1440px;
+  height: 640px;
   margin: 0 auto;
-  padding: 0 20px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
 /* Hero Section */
 .hero-section {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  width: 100%;
+  height: 100%;
   position: relative;
   display: flex;
   align-items: center;
@@ -35,73 +40,43 @@ body {
   pointer-events: none;
 }
 
+/* Logo positioning without animation */
 .logo-item {
   position: absolute;
-  animation: float 6s ease-in-out infinite;
+  z-index: 5;
+
+  /* CSS custom properties for positioning */
+  top: var(--logo-top, auto);
+  bottom: var(--logo-bottom, auto);
+  left: var(--logo-left, auto);
+  right: var(--logo-right, auto);
 }
 
-.logo-placeholder {
-  width: 60px;
-  height: 60px;
-  border-radius: 12px;
+.logo-container {
+  width: 117px;
+  height: 116px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  padding: 12px;
 }
 
-.blackberry {
-  background: #000;
-  top: 15%;
-  left: 10%;
-}
-.microsoft {
-  background: #00a1f1;
-  top: 20%;
-  right: 15%;
-  animation-delay: -1s;
-}
-.aws {
-  background: #ff9900;
-  top: 60%;
-  left: 8%;
-  animation-delay: -2s;
-}
-.github {
-  background: #24292e;
-  bottom: 25%;
-  left: 12%;
-  animation-delay: -3s;
-}
-.search {
-  background: #ffd700;
-  top: 45%;
-  right: 10%;
-  animation-delay: -4s;
-}
-.cisco {
-  background: #1ba0d7;
-  bottom: 15%;
-  right: 20%;
-  animation-delay: -5s;
-}
-.slack {
-  background: #4a154b;
-  top: 35%;
-  right: 25%;
-  animation-delay: -2.5s;
+.logo-container:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(5deg);
-  }
+.logo-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .hero-content {
@@ -109,6 +84,7 @@ body {
   z-index: 10;
   max-width: 600px;
   padding: 0 20px;
+  position: relative;
 }
 
 .hero-title {
@@ -127,7 +103,7 @@ body {
 }
 
 .cta-button {
-  padding: 14px 28px;
+  padding: 13px 20px;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
@@ -136,6 +112,8 @@ body {
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
+  width: 248px;
+  height: 45px;
 }
 
 .cta-button.primary {
@@ -148,12 +126,14 @@ body {
   box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3);
 }
 
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
+/* Responsive fallback (optional) */
+@media (max-width: 1440px) {
+  body {
+    overflow-x: auto;
   }
 
-  .section-title {
-    font-size: 1.5rem;
+  .fixed-layout {
+    width: 1440px;
+    height: 640px;
   }
 }
