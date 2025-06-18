@@ -12,12 +12,13 @@ body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
   color: #333;
-  overflow-x: auto;
+  overflow-x: hidden; /* Changed from auto to hidden */
   background-color: #f9f9f9;
 }
 
 .fixed-layout {
-  width: 1440px;
+  max-width: 1440px; /* Changed from fixed width to max-width */
+  width: 100%; /* Added for responsiveness */
   margin: 0 auto;
   position: relative;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -32,11 +33,12 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding: 0 20px; /* Added padding for mobile */
 }
 
 /* First Hero Section with Floating Logos */
 .hero-section:first-of-type {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: white;
 }
 
 /* Collaboration Tool Hero Section */
@@ -47,7 +49,7 @@ body {
   background-image: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
   height: auto;
   min-height: 60vh;
-  padding: 60px 0;
+  padding: 60px 20px; /* Added horizontal padding */
 }
 
 .hero-section:nth-of-type(3)::before {
@@ -264,7 +266,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 0;
+  padding: 60px 20px; /* Added horizontal padding */
   position: relative;
   overflow: hidden;
 }
@@ -321,11 +323,11 @@ body {
 /* AI Automation Section with Background Image */
 .ai-automation-section {
   background: url("images/section2/background.png") center center / cover no-repeat;
-  padding: 100px 0;
+  padding: 100px 20px; /* Added horizontal padding */
   color: white;
   position: relative;
   overflow: hidden;
-  min-height: 600px;
+  height: 523px; /* Changed from fixed height to min-height */
 }
 
 .ai-automation-section::before,
@@ -354,10 +356,12 @@ body {
 }
 
 .section-title {
-  font-size: 2.8rem;
+  top: 0;
+  left: 0;
+  font-size: 2.6rem;
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   color: #ffffff;
 }
 
@@ -399,33 +403,30 @@ body {
 /* Background Document Styling */
 .background-document {
   position: absolute;
-  top: 0;
-  right: 0;
+  bottom: 110px;
+  right: 8px;
   z-index: 1;
-  transform: rotate(5deg) scale(0.9);
-  opacity: 0.95;
+  transform: rotate(0deg) scale(1);
 }
 
 .document-image {
-  width: 280px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  width: 320px;
+  height: 441px;
+  border-radius: 2px;
   transition: all 0.3s ease;
 }
 
 /* Foreground Tablet Styling */
 .foreground-tablet {
-  position: relative;
+  width: 320px;
+  height: 421px;
   z-index: 2;
   transform: translateX(-30px);
 }
 
 .tablet-image {
-  width: 350px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  width: 320px;
+  height: 400px;
   transition: all 0.3s ease;
 }
 
@@ -440,227 +441,519 @@ body {
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
 }
 
-/* Mobile Responsive Styles */
-@media (max-width: 1440px) {
-  .fixed-layout {
-    width: 100%;
-    max-width: 1440px;
-  }
+/* Section Three Styles */
+.hero-section.section-three {
+  height: auto; /* Changed from fixed height */
+  min-height: 928px; /* Added min-height */
+  width: 100%; /* Changed from fixed width */
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  color: #111;
+  padding: 60px 20px; /* Added padding */
 }
 
-@media (max-width: 1024px) {
-  .ai-content {
-    gap: 60px;
-  }
+/* Gradient shade for section three (top 100px) */
+.hero-section.section-three::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  z-index: 0;
+  background: linear-gradient(
+    to bottom,
+    rgb(148, 141, 250) 10%,
+    rgb(213, 215, 226) 60%,
+    #fff 100%
+  );
+  pointer-events: none;
+}
 
-  .section-title {
-    font-size: 2.4rem;
-  }
+/* Decoration Image Styles */
+.section-three .decorating-image {
+  position: absolute;
+  left: -260px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 950px;
+  pointer-events: none;
+}
 
-  .tablet-image {
-    width: 300px;
-  }
+.section-three .decor-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.85;
+}
 
-  .document-image {
-    width: 240px;
-  }
+/* Ensure hero-content is above the decor image */
+.section-three .hero-content {
+  position: relative;
+  z-index: 2;
+  color: #111;
+}
 
-  .hero-section:nth-of-type(3) .hero-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
+/* Make sure the rating form image stays in front */
+.section-three .section-image {
+  position: relative;
+  z-index: 3;
+}
+
+/* Make hero text black in section three */
+.section-three .hero-text h1,
+.section-three .hero-text p {
+  color: #111;
+}
+
+/* Section 4 - CTA Section with Background Image */
+.cta-with-bg {
+    position: relative;
+    overflow: hidden;
+    min-height: 585px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px; /* Added padding */
+}
+
+.cta-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.cta-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.cta-with-bg .container {
+    position: relative;
+    z-index: 3;
+}
+
+.cta-with-bg .cta-content {
     text-align: center;
+    padding: 2rem;
+}
+
+.cta-with-bg .cta-content h2 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.cta-with-bg .cta-button {
+    background: #FF3366;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+.cta-with-bg .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Section 3 Slider Styles */
+.section-image-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 24px;
+    z-index: 3;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.section-image-slider .arrow-btn {
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 2rem;
+    color: #764ba2;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    z-index: 4;
+}
+
+.section-image-slider .arrow-btn:hover {
+    background: #f3e8ff;
+    color: #333;
+}
+
+.slider-images {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    min-width: 0;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.slider-image {
+    position: absolute;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.slider-image.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+}
+
+.white-spacer {
+  width: 100%;
+  height: 200px;
+  background: #fff;
+}
+
+/* MOBILE RESPONSIVE MEDIA QUERIES */
+
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.8rem;
   }
   
-  .award-badge {
-    margin: 0 auto;
-    max-width: 150px;
-  }
-  
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-  
-  .hero-text p {
-    font-size: 1rem;
-    max-width: 100%;
-  }
-  
-  .cta-content h2 {
+  .section-title {
     font-size: 2.2rem;
   }
   
-  .hero-section,
-  .cta-section {
-    padding: 40px 0;
+  .ai-content {
+    gap: 60px;
+  }
+  
+  .hero-section:nth-of-type(3) .hero-content {
+    gap: 30px;
+  }
+  
+  .cta-with-bg .cta-content h2 {
+    font-size: 4rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.8rem;
+  }
+  
+  .floating-logos {
+    opacity: 0.7; /* Reduce opacity on smaller screens */
   }
 }
 
+/* Tablets */
 @media (max-width: 768px) {
   .fixed-layout {
     width: 100%;
-    padding: 0 15px;
+    padding: 0;
   }
-
+  
   .hero-section {
     height: auto;
-    min-height: 500px;
-    padding: 40px 0;
+    min-height: 50vh;
+    padding: 40px 15px;
   }
-
-  .floating-logos {
-    display: none; /* Hide floating logos on mobile for better performance */
-  }
-
+  
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
   }
-
+  
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
   }
-
+  
   .cta-button {
     width: auto;
     padding: 12px 24px;
+    font-size: 1rem;
   }
-
+  
+  /* Hide floating logos on mobile for better performance */
+  .floating-logos {
+    display: none;
+  }
+  
+  /* AI Section Mobile */
+  .ai-automation-section {
+    padding: 60px 15px;
+    min-height: auto;
+  }
+  
   .ai-content {
     grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
+    min-height: auto;
   }
-
+  
   .ai-text {
     padding-right: 0;
     order: 2;
   }
-
+  
   .ai-visual {
     order: 1;
     height: 300px;
   }
-
+  
   .section-title {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
   }
-
+  
+  .document-image,
   .tablet-image {
     width: 250px;
+    height: auto;
   }
-
-  .document-image {
-    width: 200px;
-  }
-
+  
   .foreground-tablet {
-    transform: translateX(-20px);
+    width: 250px;
+    height: auto;
   }
-
+  
   .background-document {
-    transform: rotate(8deg) scale(0.85);
+    bottom: 50px;
+    right: 5px;
   }
-
+  
+  /* Section Three Mobile */
+  .hero-section.section-three {
+    min-height: auto;
+    padding: 40px 15px;
+  }
+  
   .hero-section:nth-of-type(3) .hero-content {
     grid-template-columns: 1fr;
     gap: 30px;
     text-align: center;
   }
   
-  .award-badge {
-    margin: 0 auto;
-    max-width: 150px;
-  }
-  
   .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
   
   .hero-text p {
     font-size: 1rem;
-    max-width: 100%;
   }
   
-  .cta-content h2 {
-    font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 15px;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .ai-automation-section {
-    padding: 60px 0;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-  }
-
-  .ai-visual {
-    height: 250px;
-  }
-
-  .tablet-image {
-    width: 200px;
-  }
-
-  .document-image {
-    width: 160px;
-  }
-
-  .foreground-tablet {
-    transform: translateX(-15px);
-  }
-
-  .background-document {
-    transform: rotate(10deg) scale(0.8);
-  }
-
-  .ai-automation-section .cta-button.secondary {
-    padding: 14px 24px;
-    font-size: 0.9rem;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
+  .section-three .decorating-image {
+    display: none; /* Hide decorative image on mobile */
   }
   
-  .cta-content h2 {
-    font-size: 1.8rem;
+  /* CTA Section Mobile */
+  .cta-with-bg {
+    min-height: 400px;
+    padding: 40px 15px;
   }
   
-  .cta-section .cta-button {
-    padding: 12px 25px;
+  .cta-with-bg .cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-with-bg .cta-button {
+    padding: 0.8rem 1.5rem;
     font-size: 1rem;
   }
   
-  .award-badge {
-    padding: 15px;
-    min-width: 140px;
+  .cta-with-bg .cta-content {
+    padding: 1.5rem;
+  }
+  
+  .white-spacer {
+    height: 100px;
+  }
+  
+  /* Section 3 Slider Mobile */
+  .section-image-slider {
+    gap: 8px;
+  }
+  
+  .slider-images {
+    width: 90vw;
+    max-width: 320px;
+    height: 160px;
+  }
+  
+  .section-image-slider .arrow-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
   }
 }
 
-/* Landscape mobile adjustments */
-@media (max-width: 768px) and (orientation: landscape) {
-  .hero-section,
-  .cta-section {
-    min-height: auto;
-    padding: 30px 0;
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 30px 10px;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
   }
   
   .hero-text h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   
-  .cta-content h2 {
+  .cta-with-bg .cta-content h2 {
     font-size: 1.8rem;
-    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .cta-with-bg .cta-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .document-image,
+  .tablet-image {
+    width: 200px;
+  }
+  
+  .foreground-tablet {
+    width: 200px;
+  }
+  
+  .ai-visual {
+    height: 250px;
+  }
+  
+  .white-spacer {
+    height: 60px;
+  }
+  
+  .slider-images {
+    width: 90vw;
+    max-width: 220px;
+    height: 110px;
+  }
+  
+  .section-image-slider .arrow-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 320px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 1.4rem;
+  }
+  
+  .cta-with-bg .cta-content h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 40vh;
+    padding: 30px 15px;
+  }
+  
+  .ai-automation-section {
+    padding: 40px 15px;
+  }
+  
+  .hero-section.section-three {
+    padding: 40px 15px;
+  }
+  
+  .cta-with-bg {
+    min-height: 300px;
+    padding: 30px 15px;
+  }
+  
+  .white-spacer {
+    height: 40px;
+  }
+}
+
+/* High DPI displays optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo-image,
+  .document-image,
+  .tablet-image,
+  .cta-bg-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
   }
 }
