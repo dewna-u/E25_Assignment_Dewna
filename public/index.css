@@ -12,19 +12,18 @@ body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
   color: #333;
-  overflow-x: hidden; /* Changed from auto to hidden */
+  overflow-x: hidden;
   background-color: #f9f9f9;
 }
 
 .fixed-layout {
-  max-width: 1440px; /* Changed from fixed width to max-width */
-  width: 100%; /* Added for responsiveness */
+  max-width: 1440px; 
+  width: 100%; 
   margin: 0 auto;
   position: relative;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
-/* Hero Section */
 .hero-section {
   width: 100%;
   height: 640px;
@@ -33,23 +32,19 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 0 20px; /* Added padding for mobile */
+  padding: 0 20px; 
 }
 
-/* First Hero Section with Floating Logos */
 .hero-section:first-of-type {
   background: white;
 }
 
-/* Collaboration Tool Hero Section */
 .hero-section:nth-of-type(3) {
-  background: url('path-to-your-gradient-image.jpg') center center / cover no-repeat;
-  /* Fallback gradient if image doesn't load */
   background-color: #6366f1;
   background-image: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
   height: auto;
   min-height: 60vh;
-  padding: 60px 20px; /* Added horizontal padding */
+  padding: 60px 20px; 
 }
 
 .hero-section:nth-of-type(3)::before {
@@ -112,7 +107,6 @@ body {
   position: relative;
 }
 
-/* Collaboration Tool Hero Content */
 .hero-section:nth-of-type(3) .hero-content {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -139,7 +133,6 @@ body {
   font-weight: 400;
 }
 
-/* Award Badge Styles */
 .award-badge {
   background: white;
   border-radius: 16px;
@@ -208,7 +201,6 @@ body {
   font-size: 14px;
 }
 
-/* Hero Text Styles for Collaboration Section */
 .hero-text h1 {
   font-size: 3.5rem;
   font-weight: 800;
@@ -259,14 +251,13 @@ body {
   background: #f1f1f1;
 }
 
-/* CTA Section Styles */
 .cta-section {
   background: linear-gradient(135deg, #1e40af 0%, #3730a3 50%, #581c87 100%);
   min-height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 20px; /* Added horizontal padding */
+  padding: 60px 20px; 
   position: relative;
   overflow: hidden;
 }
@@ -320,14 +311,13 @@ body {
   box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
 }
 
-/* AI Automation Section with Background Image */
 .ai-automation-section {
   background: url("images/section2/background.png") center center / cover no-repeat;
-  padding: 100px 20px; /* Added horizontal padding */
+  padding: 100px 20px; 
   color: white;
   position: relative;
   overflow: hidden;
-  height: 523px; /* Changed from fixed height to min-height */
+  height: 523px; 
 }
 
 .ai-automation-section::before,
@@ -382,7 +372,6 @@ body {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Device Stack Container */
 .ai-visual {
   display: flex;
   justify-content: center;
@@ -400,7 +389,6 @@ body {
   align-items: center;
 }
 
-/* Background Document Styling */
 .background-document {
   position: absolute;
   bottom: 110px;
@@ -416,7 +404,6 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Foreground Tablet Styling */
 .foreground-tablet {
   width: 320px;
   height: 421px;
@@ -430,7 +417,6 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Hover Effects */
 .device-stack:hover .tablet-image {
   transform: scale(1.02) translateY(-5px);
   box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
@@ -441,19 +427,17 @@ body {
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
 }
 
-/* Section Three Styles */
 .hero-section.section-three {
-  height: auto; /* Changed from fixed height */
-  min-height: 928px; /* Added min-height */
-  width: 100%; /* Changed from fixed width */
+  height: auto; 
+  min-height: 928px; 
+  width: 100%; 
   background: #fff;
   position: relative;
   overflow: hidden;
   color: #111;
-  padding: 60px 20px; /* Added padding */
+  padding: 60px 20px; 
 }
 
-/* Gradient shade for section three (top 100px) */
 .hero-section.section-three::before {
   content: "";
   position: absolute;
@@ -471,7 +455,6 @@ body {
   pointer-events: none;
 }
 
-/* Decoration Image Styles */
 .section-three .decorating-image {
   position: absolute;
   left: -260px;
@@ -489,26 +472,22 @@ body {
   opacity: 0.85;
 }
 
-/* Ensure hero-content is above the decor image */
 .section-three .hero-content {
   position: relative;
   z-index: 2;
   color: #111;
 }
 
-/* Make sure the rating form image stays in front */
 .section-three .section-image {
   position: relative;
   z-index: 3;
 }
 
-/* Make hero text black in section three */
 .section-three .hero-text h1,
 .section-three .hero-text p {
   color: #111;
 }
 
-/* Section 4 - CTA Section with Background Image */
 .cta-with-bg {
     position: relative;
     overflow: hidden;
@@ -516,7 +495,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 20px; /* Added padding */
+    padding: 60px 20px; 
 }
 
 .cta-background {
@@ -584,7 +563,6 @@ body {
     background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
 }
 
-/* Section 3 Slider Styles */
 .section-image-slider {
     display: flex;
     align-items: center;
@@ -655,9 +633,8 @@ body {
   background: #fff;
 }
 
-/* MOBILE RESPONSIVE MEDIA QUERIES */
 
-/* Large tablets and small desktops */
+
 @media (max-width: 1024px) {
   .hero-title {
     font-size: 2.8rem;
@@ -684,11 +661,10 @@ body {
   }
   
   .floating-logos {
-    opacity: 0.7; /* Reduce opacity on smaller screens */
+    opacity: 0.7; 
   }
 }
 
-/* Tablets */
 @media (max-width: 768px) {
   .fixed-layout {
     width: 100%;
@@ -717,12 +693,10 @@ body {
     font-size: 1rem;
   }
   
-  /* Hide floating logos on mobile for better performance */
   .floating-logos {
     display: none;
   }
   
-  /* AI Section Mobile */
   .ai-automation-section {
     padding: 60px 15px;
     min-height: auto;
@@ -766,7 +740,6 @@ body {
     right: 5px;
   }
   
-  /* Section Three Mobile */
   .hero-section.section-three {
     min-height: auto;
     padding: 40px 15px;
@@ -788,10 +761,9 @@ body {
   }
   
   .section-three .decorating-image {
-    display: none; /* Hide decorative image on mobile */
+    display: none; /* Hide on mobile */
   }
   
-  /* CTA Section Mobile */
   .cta-with-bg {
     min-height: 400px;
     padding: 40px 15px;
@@ -815,7 +787,6 @@ body {
     height: 100px;
   }
   
-  /* Section 3 Slider Mobile */
   .section-image-slider {
     gap: 8px;
   }
@@ -833,7 +804,6 @@ body {
   }
 }
 
-/* Small mobile devices */
 @media (max-width: 480px) {
   .hero-section {
     padding: 30px 10px;
@@ -903,7 +873,6 @@ body {
   }
 }
 
-/* Extra small devices */
 @media (max-width: 320px) {
   .hero-title {
     font-size: 1.5rem;
@@ -922,7 +891,6 @@ body {
   }
 }
 
-/* Landscape orientation on mobile */
 @media (max-width: 768px) and (orientation: landscape) {
   .hero-section {
     min-height: 40vh;
@@ -947,7 +915,6 @@ body {
   }
 }
 
-/* High DPI displays optimization */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .logo-image,
   .document-image,
